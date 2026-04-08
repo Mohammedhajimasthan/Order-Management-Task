@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en" class="">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Support — Admin Panel</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>tailwind.config = { darkMode: 'class' };</script>
+  <link rel="stylesheet" href="/css/styles.css" />
+  <link rel="icon" href="/favicon.ico" />
+</head>
+<body class="bg-slate-50 dark:bg-slate-900 text-slate-900 dark:text-white min-h-screen">
+
+  <div id="sidebar-overlay" class="fixed inset-0 bg-black/50 z-20 hidden lg:hidden"></div>
+
+  <!-- Sidebar -->
+  <aside id="sidebar" class="fixed top-0 left-0 h-full w-64 bg-slate-900 dark:bg-slate-950 flex flex-col z-30 transform -translate-x-full lg:translate-x-0 transition-transform duration-300">
+    <div class="flex items-center gap-3 px-6 py-5 border-b border-slate-700/50">
+      <div class="w-9 h-9 rounded-xl bg-indigo-600 flex items-center justify-center shrink-0">
+        <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
+      </div>
+      <div>
+        <p class="text-white font-semibold text-sm">Admin Panel</p>
+        <p class="text-slate-400 text-xs">Management System</p>
+      </div>
+    </div>
+    <nav class="flex-1 py-4 space-y-1 overflow-y-auto">
+      <p class="px-6 py-2 text-xs font-semibold uppercase tracking-wider text-slate-500">Main Menu</p>
+      <a href="/dashboard.html" class="nav-link flex items-center gap-3 px-4 py-3 rounded-xl mx-2 text-sm font-medium text-slate-300 hover:text-white hover:bg-white/10 transition-all">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+        Dashboard
+      </a>
+      <a href="/orders.html" class="nav-link flex items-center gap-3 px-4 py-3 rounded-xl mx-2 text-sm font-medium text-slate-300 hover:text-white hover:bg-white/10 transition-all">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"/></svg>
+        Orders
+      </a>
+      <a href="/support.html" class="nav-link active flex items-center gap-3 px-4 py-3 rounded-xl mx-2 text-sm font-medium text-indigo-400">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
+        Support
+      </a>
+      <a href="/settings.html" class="nav-link flex items-center gap-3 px-4 py-3 rounded-xl mx-2 text-sm font-medium text-slate-300 hover:text-white hover:bg-white/10 transition-all">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+        Settings
+      </a>
+    </nav>
+    <div class="border-t border-slate-700/50 p-4">
+      <div class="flex items-center gap-3 mb-3">
+        <img id="user-avatar" src="" alt="Avatar" class="w-9 h-9 rounded-full object-cover bg-slate-700" />
+        <div class="flex-1 min-w-0">
+          <p id="user-name" class="text-sm font-medium text-white truncate">Loading...</p>
+          <p class="text-xs text-slate-400">Administrator</p>
+        </div>
+      </div>
+      <button id="logout-btn" class="w-full flex items-center justify-center gap-2 py-2 px-3 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white text-sm transition-colors">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"/></svg>
+        Logout
+      </button>
+    </div>
+  </aside>
+
+  <!-- Main -->
+  <div class="lg:ml-64 flex flex-col min-h-screen">
+    <header class="sticky top-0 z-10 bg-white/80 dark:bg-slate-800/80 backdrop-blur border-b border-slate-200 dark:border-slate-700">
+      <div class="flex items-center justify-between px-4 py-3">
+        <div class="flex items-center gap-3">
+          <button id="sidebar-toggle" class="lg:hidden p-2 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-700 text-slate-500">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+          </button>
+          <h2 class="text-lg font-semibold text-slate-900 dark:text-white">Support</h2>
+        </div>
+        <div class="flex items-center gap-2">
+          <button id="topbar-dark-toggle" class="p-2 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-700 text-slate-500">
+            <svg class="w-5 h-5 dark:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg>
+            <svg class="w-5 h-5 hidden dark:block" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
+          </button>
+          <img id="user-avatar-top" src="" alt="" class="w-9 h-9 rounded-full object-cover bg-slate-200 border-2 border-white dark:border-slate-700 shadow-sm cursor-pointer" onclick="window.location.href='/settings.html'" />
+        </div>
+      </div>
+    </header>
+
+    <main class="flex-1 p-4 md:p-6 space-y-6 fade-in">
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        <!-- Create Ticket -->
+        <div class="lg:col-span-1">
+          <div class="bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-sm p-6">
+            <h3 class="font-semibold text-slate-900 dark:text-white mb-4">New Support Ticket</h3>
+            <form id="ticket-form" class="space-y-4">
+              <div>
+                <label class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1.5">Subject *</label>
+                <input name="subject" required type="text" placeholder="Brief description of your issue"
+                  class="w-full px-3 py-2.5 rounded-xl border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-700 text-sm" />
+              </div>
+              <div>
+                <label class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1.5">Message *</label>
+                <textarea name="message" required rows="5" placeholder="Describe your issue in detail..."
+                  class="w-full px-3 py-2.5 rounded-xl border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-700 text-sm resize-none"></textarea>
+              </div>
+              <button type="submit" class="w-full py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white text-sm font-medium transition-colors">
+                Submit Ticket
+              </button>
+            </form>
+          </div>
+
+          <!-- FAQ -->
+          <div class="bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-sm p-6 mt-6">
+            <h3 class="font-semibold text-slate-900 dark:text-white mb-4">Frequently Asked Questions</h3>
+            <div class="space-y-2">
+              <!-- FAQ items -->
+              <div class="faq-item border border-slate-200 dark:border-slate-700 rounded-xl overflow-hidden">
+                <button class="faq-btn w-full flex items-center justify-between p-4 text-left hover:bg-slate-50 dark:hover:bg-slate-700/50 transition-colors">
+                  <span class="text-sm font-medium text-slate-700 dark:text-slate-300">How do I add a new order?</span>
+                  <svg class="faq-icon w-4 h-4 text-slate-400 shrink-0 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                </button>
+                <div class="faq-content hidden px-4 pb-4 text-sm text-slate-600 dark:text-slate-400">
+                  Navigate to the Orders page and click the "Add Order" button in the top-right. Fill in the customer, product, amount, and status details, then save.
+                </div>
+              </div>
+              <div class="faq-item border border-slate-200 dark:border-slate-700 rounded-xl overflow-hidden">
+                <button class="faq-btn w-full flex items-center justify-between p-4 text-left hover:bg-slate-50 dark:hover:bg-slate-700/50 transition-colors">
+                  <span class="text-sm font-medium text-slate-700 dark:text-slate-300">How do I export order data?</span>
+                  <svg class="faq-icon w-4 h-4 text-slate-400 shrink-0 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                </button>
+                <div class="faq-content hidden px-4 pb-4 text-sm text-slate-600 dark:text-slate-400">
+                  On the Orders page, apply any filters you want (the export will respect your current filter). Then click "CSV" or "Excel" to download the data.
+                </div>
+              </div>
+              <div class="faq-item border border-slate-200 dark:border-slate-700 rounded-xl overflow-hidden">
+                <button class="faq-btn w-full flex items-center justify-between p-4 text-left hover:bg-slate-50 dark:hover:bg-slate-700/50 transition-colors">
+                  <span class="text-sm font-medium text-slate-700 dark:text-slate-300">How do I upload a business logo?</span>
+                  <svg class="faq-icon w-4 h-4 text-slate-400 shrink-0 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                </button>
+                <div class="faq-content hidden px-4 pb-4 text-sm text-slate-600 dark:text-slate-400">
+                  Go to Settings and scroll to the "Business Logo" section. Click "Choose File", select your image (PNG, JPG, SVG up to 5MB), and it will upload automatically to Firebase Storage.
+                </div>
+              </div>
+              <div class="faq-item border border-slate-200 dark:border-slate-700 rounded-xl overflow-hidden">
+                <button class="faq-btn w-full flex items-center justify-between p-4 text-left hover:bg-slate-50 dark:hover:bg-slate-700/50 transition-colors">
+                  <span class="text-sm font-medium text-slate-700 dark:text-slate-300">How do I enable push notifications?</span>
+                  <svg class="faq-icon w-4 h-4 text-slate-400 shrink-0 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                </button>
+                <div class="faq-content hidden px-4 pb-4 text-sm text-slate-600 dark:text-slate-400">
+                  Go to Settings → Notifications section and click "Enable Push Notifications". Your browser will ask for permission. Once granted, you'll receive notifications for new orders and ticket updates.
+                </div>
+              </div>
+              <div class="faq-item border border-slate-200 dark:border-slate-700 rounded-xl overflow-hidden">
+                <button class="faq-btn w-full flex items-center justify-between p-4 text-left hover:bg-slate-50 dark:hover:bg-slate-700/50 transition-colors">
+                  <span class="text-sm font-medium text-slate-700 dark:text-slate-300">How do I switch to dark mode?</span>
+                  <svg class="faq-icon w-4 h-4 text-slate-400 shrink-0 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                </button>
+                <div class="faq-content hidden px-4 pb-4 text-sm text-slate-600 dark:text-slate-400">
+                  Click the moon/sun icon in the top navigation bar on any page, or go to Settings and toggle "Dark Mode". Your preference is saved locally.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tickets List -->
+        <div class="lg:col-span-2">
+          <div class="flex items-center justify-between mb-4">
+            <h3 class="font-semibold text-slate-900 dark:text-white">Your Tickets</h3>
+            <button onclick="location.reload()" class="text-sm text-indigo-600 dark:text-indigo-400 hover:underline">Refresh</button>
+          </div>
+          <div id="tickets-list" class="space-y-3">
+            <div class="text-center py-10">
+              <div class="animate-spin rounded-full h-6 w-6 border-2 border-indigo-500 border-t-transparent mx-auto"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script type="module">
+    import { toggleDarkMode, initSidebar } from '/js/ui.js';
+    document.getElementById('topbar-dark-toggle').addEventListener('click', () => toggleDarkMode());
+    initSidebar();
+  </script>
+  <script type="module" src="/js/support.js"></script>
+</body>
+</html>
